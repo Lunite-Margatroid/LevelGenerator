@@ -1,0 +1,6 @@
+/bin/*
+/bin-int/*
+/.vs/*
+/Dependence/*
+!/Dependence/include/
+/logs/*
