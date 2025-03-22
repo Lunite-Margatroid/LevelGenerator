@@ -148,9 +148,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\LevelGraph.h" />
+    <ClInclude Include="src\LGException.h" />
+    <ClInclude Include="src\LG_Common.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\LevelGraph.cpp" />
+    <ClCompile Include="src\LGException.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
