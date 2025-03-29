@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd;icc</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ggl\DFS_ApplyRule.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\Graph.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\Graph_GML_writer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\Graph_GMLparser.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\Graph_gSpan_writer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\Graph_GXL_writer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\GS_stream.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\MR_ApplyRule.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\Rule.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\Rule_GML_writer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\Rule_GMLparser.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ggl\RuleGraph.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\GM_vf2.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\Graph_Interface.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\GraphScaffold.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\NSPDK_port.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\Pattern.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\RingReporter.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\RP_Hanser96.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\SGM_vf2.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\SubGraph.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgm\VF2_MatchingHandler.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\biu\OptionParser.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgd\matrices.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgd\svmsgd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\argedit.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\argloader.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\argraph.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\error.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\gene.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\gene_mesh.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\match.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\sd_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\sortnodes.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\ull_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\ull_sub_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\vf_mono_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\vf_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\vf_sub_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\vf2_mono_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\vf2_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\vf2_sub_state.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vf2\xsubgraph.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgd\timer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sgd\vectors.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nspdk\BaseGraphClass.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nspdk\FlagsService.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nspdk\GraphClass.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nspdk\Histogram.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nspdk\NSPDK_FeatureGenerator.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ggl\DFS_ApplyRule.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph_GML_grammar.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph_GML_writer.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph_GMLparser.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph_gSpan_writer.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph_GXL_writer.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph_Storage.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\GS_STL.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\GS_stream.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\MR_ApplyRule.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Rule.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Rule_GML_error.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Rule_GML_grammar.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Rule_GML_writer.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Rule_GMLparser.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\RuleGraph.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\GM_vf2.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Graph_boost.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Graph_boostV_p.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Graph_Interface.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\GraphMatching.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\GraphScaffold.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Match.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Match_Reporter.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\MC_Edge.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\MC_Node.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\MR_Counting.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\MR_Storing.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\MR_stream.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\MR_SymmBreak.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\NSPDK_port.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\PA_OrderCheck.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Pattern.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Pattern_Automorphism.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\RingPerception.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\RingReporter.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\RP_Hanser96.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\SGM_vf2.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\SubGraph.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\SubGraphMatching.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\VF2_MatchingHandler.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\biu\OptionParser.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\biu\Timer.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgd\svmsgd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgd\matrices.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgd\svmmodel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\allocpool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\argedit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\argloader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\argraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\dict.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\error.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\gene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\gene_mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\match.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\sd_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\sortnodes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\ull_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\ull_sub_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\vf_mono_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\vf_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\vf_sub_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\vf2_mono_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\vf2_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\vf2_sub_state.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vf2\xsubgraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Graph_boost.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Graph_boostV_p.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\Graph_Interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\HashMap.hh">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\PA_OrderCheck.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\SubGraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgm\VF2_MatchingHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\DFS_ApplyRule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph_GML_grammar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph_GML_writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Graph_GXL_writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\GS_STL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\MR_ApplyRule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\GS_stream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Rule.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Rule_GML_grammar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\Rule_GML_writer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ggl\RuleGraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgd\timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgd\vectors.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sgd\wrapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nspdk\BaseGraphClass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nspdk\FeatureGenerator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nspdk\FlagsService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nspdk\GraphClass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nspdk\Histogram.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nspdk\SVector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nspdk\Utility.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nspdk\NSPDK_FeatureGenerator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{c6d3020e-e2a5-40e9-b65b-0dab92c5f74c}</ProjectGuid>
+    <RootNamespace>GGL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(platform)</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)\$(platform)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(platform)</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)\$(platform)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(platform)</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)\$(platform)</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(platform)</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)\$(platform)</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_WINDOWS_OS;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>L:\boost_1_87_0;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>3848</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_WINDOWS_OS;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>L:\boost_1_87_0;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>3848</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_WINDOWS_OS;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>L:\boost_1_87_0;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>3848</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_WINDOWS_OS;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>L:\boost_1_87_0;$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>3848</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\biu\OptionParser.cc" />
+    <ClCompile Include="src\ggl\DFS_ApplyRule.cc" />
+    <ClCompile Include="src\ggl\Graph.cc" />
+    <ClCompile Include="src\ggl\Graph_GMLparser.cc" />
+    <ClCompile Include="src\ggl\Graph_GML_writer.cc" />
+    <ClCompile Include="src\ggl\Graph_gSpan_writer.cc" />
+    <ClCompile Include="src\ggl\Graph_GXL_writer.cc" />
+    <ClCompile Include="src\ggl\GS_stream.cc" />
+    <ClCompile Include="src\ggl\MR_ApplyRule.cc" />
+    <ClCompile Include="src\ggl\Rule.cc" />
+    <ClCompile Include="src\ggl\RuleGraph.cc" />
+    <ClCompile Include="src\ggl\Rule_GMLparser.cc" />
+    <ClCompile Include="src\ggl\Rule_GML_writer.cc" />
+    <ClCompile Include="src\nspdk\BaseGraphClass.cc" />
+    <ClCompile Include="src\nspdk\FlagsService.cc" />
+    <ClCompile Include="src\nspdk\GraphClass.cc" />
+    <ClCompile Include="src\nspdk\Histogram.cc" />
+    <ClCompile Include="src\nspdk\NSPDK_FeatureGenerator.cc" />
+    <ClCompile Include="src\sgd\matrices.cpp" />
+    <ClCompile Include="src\sgd\svmsgd.cpp" />
+    <ClCompile Include="src\sgd\timer.cpp" />
+    <ClCompile Include="src\sgd\vectors.cpp" />
+    <ClCompile Include="src\sgm\GM_vf2.cc" />
+    <ClCompile Include="src\sgm\GraphScaffold.cc" />
+    <ClCompile Include="src\sgm\Graph_Interface.cc" />
+    <ClCompile Include="src\sgm\NSPDK_port.cc" />
+    <ClCompile Include="src\sgm\Pattern.cc" />
+    <ClCompile Include="src\sgm\RingReporter.cc" />
+    <ClCompile Include="src\sgm\RP_Hanser96.cc" />
+    <ClCompile Include="src\sgm\SGM_vf2.cc" />
+    <ClCompile Include="src\sgm\SubGraph.cc" />
+    <ClCompile Include="src\sgm\VF2_MatchingHandler.cc" />
+    <ClCompile Include="src\vf2\argedit.cc" />
+    <ClCompile Include="src\vf2\argloader.cc" />
+    <ClCompile Include="src\vf2\argraph.cc" />
+    <ClCompile Include="src\vf2\error.cc" />
+    <ClCompile Include="src\vf2\gene.cc" />
+    <ClCompile Include="src\vf2\gene_mesh.cc" />
+    <ClCompile Include="src\vf2\match.cc" />
+    <ClCompile Include="src\vf2\sd_state.cc" />
+    <ClCompile Include="src\vf2\sortnodes.cc" />
+    <ClCompile Include="src\vf2\ull_state.cc" />
+    <ClCompile Include="src\vf2\ull_sub_state.cc" />
+    <ClCompile Include="src\vf2\vf2_mono_state.cc" />
+    <ClCompile Include="src\vf2\vf2_state.cc" />
+    <ClCompile Include="src\vf2\vf2_sub_state.cc" />
+    <ClCompile Include="src\vf2\vf_mono_state.cc" />
+    <ClCompile Include="src\vf2\vf_state.cc" />
+    <ClCompile Include="src\vf2\vf_sub_state.cc" />
+    <ClCompile Include="src\vf2\xsubgraph.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\biu\OptionParser.hh" />
+    <ClInclude Include="src\biu\Timer.hh" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ggl\DFS_ApplyRule.h" />
+    <ClInclude Include="src\ggl\DFS_ApplyRule.hh" />
+    <ClInclude Include="src\ggl\Graph.hh" />
+    <ClInclude Include="src\ggl\Graph_GMLparser.hh" />
+    <ClInclude Include="src\ggl\Graph_GML_grammar.h" />
+    <ClInclude Include="src\ggl\Graph_GML_grammar.hh" />
+    <ClInclude Include="src\ggl\Graph_GML_writer.h" />
+    <ClInclude Include="src\ggl\Graph_GML_writer.hh" />
+    <ClInclude Include="src\ggl\Graph_gSpan_writer.hh" />
+    <ClInclude Include="src\ggl\Graph_GXL_writer.h" />
+    <ClInclude Include="src\ggl\Graph_GXL_writer.hh" />
+    <ClInclude Include="src\ggl\Graph_Storage.hh" />
+    <ClInclude Include="src\ggl\GS_STL.h" />
+    <ClInclude Include="src\ggl\GS_STL.hh" />
+    <ClInclude Include="src\ggl\GS_stream.h" />
+    <ClInclude Include="src\ggl\GS_stream.hh" />
+    <ClInclude Include="src\ggl\MR_ApplyRule.h" />
+    <ClInclude Include="src\ggl\MR_ApplyRule.hh" />
+    <ClInclude Include="src\ggl\Rule.h" />
+    <ClInclude Include="src\ggl\Rule.hh" />
+    <ClInclude Include="src\ggl\RuleGraph.h" />
+    <ClInclude Include="src\ggl\RuleGraph.hh" />
+    <ClInclude Include="src\ggl\Rule_GMLparser.hh" />
+    <ClInclude Include="src\ggl\Rule_GML_error.hh" />
+    <ClInclude Include="src\ggl\Rule_GML_grammar.h" />
+    <ClInclude Include="src\ggl\Rule_GML_grammar.hh" />
+    <ClInclude Include="src\ggl\Rule_GML_writer.h" />
+    <ClInclude Include="src\ggl\Rule_GML_writer.hh" />
+    <ClInclude Include="src\nspdk\BaseGraphClass.h" />
+    <ClInclude Include="src\nspdk\FeatureGenerator.h" />
+    <ClInclude Include="src\nspdk\FlagsService.h" />
+    <ClInclude Include="src\nspdk\GraphClass.h" />
+    <ClInclude Include="src\nspdk\Histogram.h" />
+    <ClInclude Include="src\nspdk\NSPDK_FeatureGenerator.h" />
+    <ClInclude Include="src\nspdk\SVector.h" />
+    <ClInclude Include="src\nspdk\Utility.h" />
+    <ClInclude Include="src\sgd\matrices.h" />
+    <ClInclude Include="src\sgd\svmmodel.h" />
+    <ClInclude Include="src\sgd\svmsgd.h" />
+    <ClInclude Include="src\sgd\timer.h" />
+    <ClInclude Include="src\sgd\vectors.h" />
+    <ClInclude Include="src\sgd\wrapper.h" />
+    <ClInclude Include="src\sgm\GM_vf2.hh" />
+    <ClInclude Include="src\sgm\GraphMatching.hh" />
+    <ClInclude Include="src\sgm\GraphScaffold.hh" />
+    <ClInclude Include="src\sgm\Graph_boost.h" />
+    <ClInclude Include="src\sgm\Graph_boost.hh" />
+    <ClInclude Include="src\sgm\Graph_boostV_p.h" />
+    <ClInclude Include="src\sgm\Graph_boostV_p.hh" />
+    <ClInclude Include="src\sgm\Graph_Interface.h" />
+    <ClInclude Include="src\sgm\Graph_Interface.hh" />
+    <ClInclude Include="src\sgm\HashMap.hh" />
+    <ClInclude Include="src\sgm\Match.hh" />
+    <ClInclude Include="src\sgm\Match_Reporter.hh" />
+    <ClInclude Include="src\sgm\MC_Edge.hh" />
+    <ClInclude Include="src\sgm\MC_Node.hh" />
+    <ClInclude Include="src\sgm\MR_Counting.hh" />
+    <ClInclude Include="src\sgm\MR_Storing.hh" />
+    <ClInclude Include="src\sgm\MR_stream.hh" />
+    <ClInclude Include="src\sgm\MR_SymmBreak.hh" />
+    <ClInclude Include="src\sgm\NSPDK_port.hh" />
+    <ClInclude Include="src\sgm\Pattern.hh" />
+    <ClInclude Include="src\sgm\Pattern_Automorphism.hh" />
+    <ClInclude Include="src\sgm\PA_OrderCheck.h" />
+    <ClInclude Include="src\sgm\PA_OrderCheck.hh" />
+    <ClInclude Include="src\sgm\RingPerception.hh" />
+    <ClInclude Include="src\sgm\RingReporter.hh" />
+    <ClInclude Include="src\sgm\RP_Hanser96.hh" />
+    <ClInclude Include="src\sgm\SGM_vf2.hh" />
+    <ClInclude Include="src\sgm\SubGraph.h" />
+    <ClInclude Include="src\sgm\SubGraph.hh" />
+    <ClInclude Include="src\sgm\SubGraphMatching.hh" />
+    <ClInclude Include="src\sgm\VF2_MatchingHandler.h" />
+    <ClInclude Include="src\sgm\VF2_MatchingHandler.hh" />
+    <ClInclude Include="src\vf2\allocpool.h" />
+    <ClInclude Include="src\vf2\argedit.h" />
+    <ClInclude Include="src\vf2\argloader.h" />
+    <ClInclude Include="src\vf2\argraph.h" />
+    <ClInclude Include="src\vf2\dict.h" />
+    <ClInclude Include="src\vf2\error.h" />
+    <ClInclude Include="src\vf2\gene.h" />
+    <ClInclude Include="src\vf2\gene_mesh.h" />
+    <ClInclude Include="src\vf2\match.h" />
+    <ClInclude Include="src\vf2\sd_state.h" />
+    <ClInclude Include="src\vf2\sortnodes.h" />
+    <ClInclude Include="src\vf2\state.h" />
+    <ClInclude Include="src\vf2\ull_state.h" />
+    <ClInclude Include="src\vf2\ull_sub_state.h" />
+    <ClInclude Include="src\vf2\vf2_mono_state.h" />
+    <ClInclude Include="src\vf2\vf2_state.h" />
+    <ClInclude Include="src\vf2\vf2_sub_state.h" />
+    <ClInclude Include="src\vf2\vf_mono_state.h" />
+    <ClInclude Include="src\vf2\vf_state.h" />
+    <ClInclude Include="src\vf2\vf_sub_state.h" />
+    <ClInclude Include="src\vf2\xsubgraph.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
