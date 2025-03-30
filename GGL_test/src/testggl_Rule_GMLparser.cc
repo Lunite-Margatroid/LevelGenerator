@@ -4,7 +4,7 @@
 #include "sgm/Graph_boost.hh"
 
 
-#include "utilPrintRule.icc"
+#include "utilPrintRule.h"
 
 
 std::string gmlRule1 = std::string(

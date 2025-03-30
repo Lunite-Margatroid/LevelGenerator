@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\testggl_Rule_GML_writer.cc">
+    <ClCompile Include="src\testggl_Rule_GMLparser.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
