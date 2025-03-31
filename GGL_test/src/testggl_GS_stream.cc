@@ -4,7 +4,7 @@
 
 #include "ggl/GS_stream.hh"
 
-#include "dataTargetGraph_1.icc"
+#include "dataTargetGraph_1.h"
 
 int main(int argc, char** argv) {
 	

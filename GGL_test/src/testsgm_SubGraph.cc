@@ -8,9 +8,9 @@
 #include "sgm/SubGraph.hh"
 #include "sgm/Graph_boost.hh"
 
-#include "dataSGMgraphs_1.icc"
+#include "dataSGMgraphs_1.h"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 
 int main(int argc, char** argv) {

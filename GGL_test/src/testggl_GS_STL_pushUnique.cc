@@ -11,10 +11,10 @@
 
 #include "sgm/GM_vf2.hh"
 
-#include "dataTargetGraph_1.icc"
-#include "dataTargetGraph_2.icc"
-#include "dataTargetGraph_3.icc"
-#include "utilPrintRule.icc"
+#include "dataTargetGraph_1.h"
+#include "dataTargetGraph_2.h"
+#include "dataTargetGraph_3.h"
+#include "utilPrintRule.h"
 
 
 

@@ -5,11 +5,11 @@
 #include "sgm/MR_stream.hh"
 #include "sgm/SGM_vf2.hh"
 
-#include "dataSGMgraphs_1.icc"
-#include "dataSGMgraphs_2.icc"
-#include "dataSGMgraphs_3.icc"
+#include "dataSGMgraphs_1.h"
+#include "dataSGMgraphs_2.h"
+#include "dataSGMgraphs_3.h"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 	typedef sgm::Graph_boost<	MyGraph
 								, boost::vertex_name_t

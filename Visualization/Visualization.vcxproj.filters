@@ -18,21 +18,12 @@
     <ClCompile Include="src\Visualization.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Visualization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\CommonV.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\utilPrintGraph_Interface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\utilPrintRule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

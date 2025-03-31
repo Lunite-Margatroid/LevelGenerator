@@ -8,10 +8,10 @@
 
 #include "sgm/Graph_boost.hh"
 
-#include "dataTargetGraph_1.icc"
-#include "dataTargetGraph_4.icc"
+#include "dataTargetGraph_1.h"
+#include "dataTargetGraph_4.h"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 int main() {
 

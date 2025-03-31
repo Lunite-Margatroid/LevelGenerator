@@ -8,9 +8,9 @@
 #include "ggl/chem/Molecule.hh"
 #include "ggl/chem/SMILES_grammar.hh"
 
-#include "dataTargetGraph_1.icc"
+#include "dataTargetGraph_1.h"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 int main(int argc, char** argv) {
 	

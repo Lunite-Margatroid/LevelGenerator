@@ -71,22 +71,22 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)\$(platform)</OutDir>
+    <OutDir>$(SolutionDir)Bin\$(Configuration)\$(platform)</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)\$(platform)</IntDir>
     <IncludePath>$(SolutionDir)Dependence\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)\$(platform)</OutDir>
+    <OutDir>$(SolutionDir)Bin\$(Configuration)\$(platform)</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)\$(platform)</IntDir>
     <IncludePath>$(SolutionDir)Dependence\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)\$(platform)</OutDir>
+    <OutDir>$(SolutionDir)Bin\$(Configuration)\$(platform)</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)\$(platform)</IntDir>
     <IncludePath>$(SolutionDir)Dependence\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)\$(platform)</OutDir>
+    <OutDir>$(SolutionDir)Bin\$(Configuration)\$(platform)</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)\$(platform)</IntDir>
     <IncludePath>$(SolutionDir)Dependence\include;$(IncludePath)</IncludePath>
   </PropertyGroup>

@@ -15,8 +15,8 @@
 #include "sgm/Graph_boost.hh"
 #include "sgm/Graph_boostV_p.hh"
 
-#include "dataChemRule_1.icc"
-#include "utilPrintRule.icc"
+#include "dataChemRule_1.h"
+#include "utilPrintRule.h"
 
 using namespace ggl;
 using namespace ggl::chem;

@@ -9,7 +9,7 @@
 #include "sgm/Graph_boost.hh"
 #include "sgm/GraphScaffold.hh"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 using namespace ggl;
 using namespace sgm;

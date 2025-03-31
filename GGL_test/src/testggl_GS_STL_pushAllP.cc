@@ -11,13 +11,13 @@
 #include "sgm/Graph_boost.hh"
 #include "sgm/Graph_boostV_p.hh"
 
-#include "dataRule_1.icc"
-#include "dataRule_2.icc"
-#include "dataRule_3.icc"
-#include "dataTargetGraph_1.icc"
-#include "dataTargetGraph_2.icc"
-#include "dataTargetGraph_3.icc"
-#include "utilPrintRule.icc"
+#include "dataRule_1.h"
+#include "dataRule_2.h"
+#include "dataRule_3.h"
+#include "dataTargetGraph_1.h"
+#include "dataTargetGraph_2.h"
+#include "dataTargetGraph_3.h"
+#include "utilPrintRule.h"
 
 void performTest( const ggl::Rule& r, const int targetNumber, const bool addEachComponent ) {
 

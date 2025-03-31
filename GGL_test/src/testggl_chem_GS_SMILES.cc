@@ -10,9 +10,9 @@
 #include "ggl/chem/SMILESparser.hh"
 #include "ggl/chem/GS_SMILES.hh"
 
-#include "dataTargetGraph_1.icc"
+#include "dataTargetGraph_1.h"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 void runSuccessiveInsert( const std::vector<std::string>& SMILES) {
 	

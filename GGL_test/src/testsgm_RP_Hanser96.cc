@@ -9,11 +9,11 @@
 #include "sgm/Graph_boost.hh"
 #include "sgm/RP_Hanser96.hh"
 
-#include "dataTargetGraph_1.icc"
-#include "dataTargetGraph_2.icc"
-#include "dataTargetGraph_3.icc"
+#include "dataTargetGraph_1.h"
+#include "dataTargetGraph_2.h"
+#include "dataTargetGraph_3.h"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 using namespace ggl;
 using namespace sgm;

@@ -6,7 +6,7 @@
 #include <sgm/Graph_boost.hh>
 
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 #include <cstring>
 

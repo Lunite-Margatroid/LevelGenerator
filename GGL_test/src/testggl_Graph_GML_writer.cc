@@ -4,9 +4,9 @@
 #include "ggl/Graph.hh"
 #include "ggl/Graph_GML_writer.hh"
 
-#include "dataTargetGraph_1.icc"
-#include "dataTargetGraph_2.icc"
-#include "dataTargetGraph_3.icc"
+#include "dataTargetGraph_1.h"
+#include "dataTargetGraph_2.h"
+#include "dataTargetGraph_3.h"
 
 int main() {
 

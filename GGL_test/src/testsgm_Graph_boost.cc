@@ -4,9 +4,9 @@
 
 #include "sgm/Graph_boost.hh"
 
-#include "dataSGMgraphs_1.icc"
+#include "dataSGMgraphs_1.h"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 
 

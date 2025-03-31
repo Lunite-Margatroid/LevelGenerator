@@ -11,10 +11,10 @@
 #include "ggl/chem/SMILESparser.hh"
 #include "ggl/chem/Molecule_Graph_noClass.hh"
 
-#include "dataTargetGraph_1.icc"
+#include "dataTargetGraph_1.h"
 
-//#include "utilPrintGraph_Interface.icc"
-#include "utilPrintRule.icc"
+//#include "utilPrintGraph_Interface.h"
+#include "utilPrintRule.h"
 
 
 int main(int argc, char** argv) {

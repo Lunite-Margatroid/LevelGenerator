@@ -10,7 +10,7 @@
 #include "sgm/GM_vf2.hh"
 #include "sgm/SGM_vf2.hh"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 using namespace ggl;
 using namespace ggl::chem;

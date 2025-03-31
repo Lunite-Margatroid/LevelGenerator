@@ -5,20 +5,20 @@
 
 
 TESTINCLUDES =	\
-				dataTargetGraph_1.icc \
-				dataTargetGraph_2.icc \
-				dataTargetGraph_3.icc \
-				dataTargetGraph_4.icc \
-				dataRule_1.icc \
-				dataRule_2.icc \
-				dataRule_3.icc \
-				dataRule_4.icc \
-				dataChemRule_1.icc \
-				dataSGMgraphs_1.icc \
-				dataSGMgraphs_2.icc \
-				dataSGMgraphs_3.icc \
-				utilPrintGraph_Interface.icc \
-				utilPrintRule.icc
+				dataTargetGraph_1.h \
+				dataTargetGraph_2.h \
+				dataTargetGraph_3.h \
+				dataTargetGraph_4.h \
+				dataRule_1.h \
+				dataRule_2.h \
+				dataRule_3.h \
+				dataRule_4.h \
+				dataChemRule_1.h \
+				dataSGMgraphs_1.h \
+				dataSGMgraphs_2.h \
+				dataSGMgraphs_3.h \
+				utilPrintGraph_Interface.h \
+				utilPrintRule.h
 
 # set the test routines for OpenBabel depending classes
 OB_FILES = \

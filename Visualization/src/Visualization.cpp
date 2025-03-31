@@ -6,6 +6,8 @@ cv::Mat Visualization::DrawTreeGraph(const sgm::Graph_Interface& graph, const st
 	int pixelWidth = depth * COL_WIDTH;
 	int pixelHeight = rank * NODE_GAP;
 	int colWidthD2 = COL_WIDTH / 2;
+	pixelWidth = std::max(pixelWidth, 1);
+	pixelHeight = std::max(pixelHeight, 1);
 	cv::Mat outImg(pixelHeight, pixelWidth, CV_8UC3, cv::Scalar(255,255,255));
 	std::vector<std::pair<int, int>> nodeCoord;
 	int nNode = graph.getNodeNumber();
@@ -25,11 +27,12 @@ cv::Mat Visualization::DrawTreeGraph(const sgm::Graph_Interface& graph, const st
 			std::string nodeLabel = graph.getNodeLabel(curNode);
 			std::stringstream ss;
 			ss.clear();
-			ss << curNode << ": " << nodeLabel;
+			if (m_bPrintInd)
+				ss << curNode << ": ";
+			ss << nodeLabel;
 			cv::HersheyFonts font = cv::FONT_HERSHEY_SIMPLEX;
 			float fontScale = 1.0;
 			int baseLine = y + RADIUS / 2;
-			
 			cv::Size textRect = cv::getTextSize(ss.str(), font, 1, TEXT_THICKNESS, &baseLine);
 			fontScale = float(RADIUS) / float(textRect.height);
 			textRect.height *= fontScale;
@@ -60,11 +63,26 @@ cv::Mat Visualization::DrawTreeGraph(const sgm::Graph_Interface& graph, const st
 			y2 -= deltaY;
 
 			cv::line(outImg, cv::Point(int(x1), int(y1)), cv::Point(int(x2), int(y2)), cv::Scalar(0, 0, 0), LINE_THICKNESS, LINE_TYPE);
+			// cv::arrowedLine(outImg, cv::Point(int(x1), int(y1)), cv::Point(int(x2), int(y2)), cv::Scalar(0, 0, 0), LINE_THICKNESS, LINE_TYPE);
 		}
 	}
 	
 
 	return outImg;
+}
+
+Visualization::Visualization(bool bPrintInd)
+	:m_bPrintInd(bPrintInd),
+	m_bLableBegin(false),
+	m_strBeginLabel()
+{
+}
+
+Visualization::Visualization()
+	:m_bPrintInd(true),
+	m_bLableBegin(false),
+	m_strBeginLabel()
+{
 }
 
 cv::Mat Visualization::GraphInterface2Img(const sgm::Graph_Interface& gi) const
@@ -87,8 +105,29 @@ cv::Mat Visualization::GraphInterface2Img(const sgm::Graph_Interface& gi) const
 	std::vector<std::vector<int>> nodes;
 	nodes.push_back(std::vector<int>());
 	// traverse
-	q.push(0);
-	bFlag[0] = true;
+	if (m_bLableBegin)
+	{// 将指定的标签节点作为起始节点
+		int idx = 0;
+		for (; idx < nNode; idx++)
+		{
+			if (gi.getNodeLabel(idx) == m_strBeginLabel)
+			{
+				q.push(idx);
+				bFlag[idx] = true;
+				break;
+			}
+		}
+		if (idx == nNode)
+		{
+			q.push(0);
+			bFlag[0] = true;
+		}
+	}
+	else
+	{
+		q.push(0);
+		bFlag[0] = true;
+	}
 	q.push(-1);
 	int tRank = 0;
 	while (!q.empty())
@@ -131,7 +170,7 @@ cv::Mat Visualization::GraphInterface2Img(const sgm::Graph_Interface& gi) const
 cv::Mat Visualization::Graph2Img(const ggl::Graph& graph) const
 {
 	// Get the interface of the graph
-	sgm::Graph_boost<ggl::Graph> gi(graph);
+	const sgm::Graph_boost<ggl::Graph> gi(graph);
 	return GraphInterface2Img(gi);
 }
 
@@ -203,4 +242,28 @@ cv::Mat Visualization::ParseRule(const std::string& filePath) const
 	ss << inFile.rdbuf();
 
 	return RuleGML2Img(ss.str());
+}
+
+std::string Visualization::ReadFile(const std::string& filePath) const
+{
+	std::ifstream inFile(filePath, std::ios::in);
+	std::stringstream ss;
+	if (inFile.is_open())
+	{
+		ss << inFile.rdbuf();
+		return ss.str();
+	}
+	ss << "[error] Reading file: " << filePath << " failed.\n";
+	return ss.str();
+}
+
+void Visualization::SetIdxPrint(bool bIdxPrint)
+{
+	m_bPrintInd = bIdxPrint;
+}
+
+void Visualization::SetBeginLabel(bool bLabelBegin, const std::string& label)
+{
+	m_bLableBegin = bLabelBegin;
+	m_strBeginLabel = label;
 }

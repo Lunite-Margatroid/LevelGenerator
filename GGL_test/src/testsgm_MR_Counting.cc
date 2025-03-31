@@ -5,9 +5,9 @@
 #include "sgm/MR_Counting.hh"
 #include "sgm/Graph_boost.hh"
 
-#include "dataSGMgraphs_1.icc"
+#include "dataSGMgraphs_1.h"
 
-#include "utilPrintGraph_Interface.icc"
+#include "utilPrintGraph_Interface.h"
 
 
 
@@ -42,10 +42,10 @@ int main(int argc, char** argv) {
 	  // create dummy match:
 	std::cout <<"--> create dummy match :\n" <<std::endl;
 	sgm::Match match;
-	match.push_back(4);
-	match.push_back(3);
-	match.push_back(2);
-	match.push_back(5);
+	// match.push_back(4);
+	// match.push_back(3);
+	// match.push_back(2);
+	// match.push_back(5);
 	for (size_t i=0; i<match.size(); i++) {
 		std::cout <<" " <<match[i];
 	}
