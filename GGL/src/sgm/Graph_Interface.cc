@@ -41,9 +41,19 @@ namespace sgm {
 
 			while ( thisEdge != thisEdgeEnd && compareEdge != compareEdgeEnd ) {
 				  // check if edge descriptors are equal
-				if (*thisEdge != *compareEdge) {
+				// ======= modify by Lunite ==============
+				// if (*thisEdge != *compareEdge) {
+				// 	return false;
+				// }
+				// 检查后置节点
+				if(thisEdge->getToIndex() != compareEdge->getToIndex())
 					return false;
-				}
+				// 检查边的标签
+				if (thisEdge->getEdgeLabel() != compareEdge->getEdgeLabel())
+					return false;
+				// ========== modify end ================
+				// 这里的重写不正确 只是权宜之计 使用规则集合时要保证left side一模一样 id也要一样
+
 				  // go to next adjacent edge
 				++thisEdge;
 				++compareEdge;

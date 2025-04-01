@@ -54,6 +54,18 @@ GraphGrammar::GraphGrammar(RuleSet& ruleSet)
 	:m_ruleSet(ruleSet),m_Seed(0)
 {
 	std::srand(m_Seed);
+
+	int count = 1;
+	for (auto v : m_ruleSet.m_Datas)
+	{
+		std::cout << "RuleSet " << count++ << std::endl;
+		std::cout << "Weights: ";
+		for (const auto& [rule, w] : v)
+		{
+			std::cout << w << ", ";
+		}
+		std::cout << std::endl;
+	}
 }
 
 const ggl::Graph& GraphGrammar::GetLastGraph() const

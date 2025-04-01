@@ -3,16 +3,17 @@
 
 void FileParser::ReadFile(const std::string& filePath)
 {
-	m_inFile.open(filePath, std::ios::in);
-	if (m_inFile.is_open())
+	std::fstream inFile;
+	std::stringstream ss;
+	inFile.open(filePath, std::ios::in);
+	if (inFile.is_open())
 	{
-		m_ss.clear();
-		m_ss << m_inFile.rdbuf();
-		m_buffer = m_ss.str();
-		m_inFile.close();
+		ss << inFile.rdbuf();
+		m_buffer.clear();
+		m_buffer = ss.str();
+		inFile.close();
 		return;
 	}
-	m_inFile.close();
 	std::cout << "[FileParser][error] File openning failed.\n";
 }
 
@@ -163,7 +164,7 @@ ggl::Graph FileParser::ParseGraphGML(const std::string& gmlGraph)
 	std::pair<ggl::Graph, int> v = ggl::Graph_GMLparser::parseGraph(gmlGraph);
 	if (v.second >= 0)
 	{
-		std::cout << "[FileParser][error] GML Rule Parsing Failed. Line: " << v.second  << std::endl;
+		std::cout << "[FileParser][error] GML Graph Parsing Failed. Line: " << v.second  << std::endl;
 		OutStringWithLineNumber(gmlGraph, std::cout);
 	}
 	return v.first;

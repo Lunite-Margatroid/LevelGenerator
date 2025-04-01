@@ -6,7 +6,7 @@ class RuleSet
 	friend class GraphGrammar;
 private:
 	std::vector<std::vector<std::pair<ggl::Rule, float>>> m_Datas;
-private:
+public:
 	bool SameLeftPattern(const ggl::LeftSidePattern& p1, const ggl::LeftSidePattern& p2) const;
 public:
 	RuleSet() = default;

@@ -37,6 +37,12 @@ bug描述: 如果应用(apply)的规则(rule)导致要删除边(edge)，抛出en
 
 debug: `MR_ApplyRule.cc` line590 处遍历并删除边(edge)，添加逻辑：找到并删除`edge`后，`break`跳出循环。
 
+#### vector iterator incompatible
+
+bug描述: 调用`Graph_Interface`的`==`重载的时候(具体来说是调用`edge descriptors`的`!=`)，抛异常(`vector iterator incompatible`)。该bug使相关类的`==`和`!=`调用异常。我则是在`Pattern_Interface`上调用异常。
+
+debug: 修改`Graph_Interface::operator==()`中，对于边(edge)的检测。file:Graph_Interface.hh line 50
+
 ## opencv
 
 url: https://opencv.org/

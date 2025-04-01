@@ -13,9 +13,68 @@ int testMain();
 
 int testReader();
 
+int LevelGeneratr();
+
+int SameTest();
+
 int main(int argn, char** argv)
 {
-	return testReader();
+	return LevelGeneratr();
+}
+
+int SameTest()
+{
+	FileParser parser;
+	std::vector<std::pair<ggl::Rule, float>> rules;
+	parser.ParseRuleGMLFileB("./res/rule-b-001.txt", rules);
+
+	RuleSet ruleSet;
+	ggl_util::printLeftSidePattern(rules[2].first);
+	ggl_util::printLeftSidePattern(rules[3].first);
+	std::cout << "rule3 == rule4 ? " <<
+		(ruleSet.SameLeftPattern(ggl::LeftSidePattern(rules[2].first), ggl::LeftSidePattern(rules[3].first)) ? "yes" : "no" )<< std::endl;
+	return 0;
+}
+
+int LevelGeneratr()
+{
+	FileParser parser;
+	RuleSet ruleSet;
+	Visualization visual;
+	visual.SetBeginLabel(true, "e");
+	visual.SetIdxPrint(false);
+	std::vector<std::pair<ggl::Rule, float>> rules;
+	parser.ParseRuleGMLFileB("./res/rule-b-001.txt", rules);
+	for (std::pair<ggl::Rule, float> rule : rules)
+	{
+		ggl_util::printRule(rule.first);
+		ggl_util::printLeftSidePattern(rule.first);
+		ggl_util::printRightSidePattern(rule.first);
+		ruleSet.AddRule(rule.first, rule.second);
+	}
+	GraphGrammar gg(ruleSet);
+
+	ggl::Graph graph = parser.ParseGraphGMLFile("./res/graph-a-003.txt");
+	gg.SetInputGraph(graph);
+
+	for (int i = 0; i < 10; i++)
+	{
+		gg.SetSeed(i);
+		gg.ResetGC();
+		int nSteps = 0;
+		while (gg.Step() > 0 && nSteps < 30)
+		{
+			nSteps++;
+
+			cv::Mat outImg = visual.Graph2Img(gg.GetLastGraph());
+			std::stringstream ss;
+			ss.clear();
+			ss << "./res/LGTestOutImg_"<< i << '_' << nSteps << ".jpg";
+			std::cout << "Step: " << nSteps << std::endl;
+			cv::imwrite(ss.str(), outImg);
+		}
+	}
+	return 0;
 }
 
 int testMain()
