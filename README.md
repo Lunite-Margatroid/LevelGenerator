@@ -17,23 +17,25 @@ url: https://www.tbi.univie.ac.at/software/GGL/
 
 ### debug
 
-不知道是因为开发环境不同还是什么，我在使用的时候出了一些bug.
+不知道是因为开发环境不同还是什么原因，我在使用GGL的时候出了一些bug.
 
 #### 丢失const-volatile
 
-在发生错误的模板匹配处加`const`.
+bug描述: MSVC编译错误，C3848, 丢失const-volatile.
+
+debug: 在发生错误的模板匹配处加`const`.
 
 #### minus unsigned
 
-把相关类型从`size_t`改为`int`.
+bug描述: 对size_t类型的变量使用`-`操作符
+
+debug: 把相关类型从`size_t`改为`int`.
 
 #### end_iter ++
 
-`MR_ApplyRule.cc`。如果应用的规则中含有删除边的规则时，抛异常。
+bug描述: 如果应用(apply)的规则(rule)导致要删除边(edge)，抛出end迭代器`++`的异常。
 
-此处遍历特定顶点的`out edge`。
-
-添加逻辑：找到并删除`edge`后，`break`跳出循环。
+debug: `MR_ApplyRule.cc` line590 处遍历并删除边(edge)，添加逻辑：找到并删除`edge`后，`break`跳出循环。
 
 ## opencv
 
