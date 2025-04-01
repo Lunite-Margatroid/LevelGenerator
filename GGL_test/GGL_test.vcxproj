@@ -164,10 +164,7 @@
     <ClInclude Include="src\utilPrintRule.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\testtmp.verified" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\testsgm_MR_Counting.cc" />
+    <ClCompile Include="src\testggl_MR_ApplyRule.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

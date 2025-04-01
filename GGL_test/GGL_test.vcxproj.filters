@@ -23,10 +23,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\testtmp.verified" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\testsgm_MR_Counting.cc">
+    <ClCompile Include="src\testggl_MR_ApplyRule.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

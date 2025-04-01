@@ -1,6 +1,5 @@
 #include "CommonV.h"
 #include "Visualization.h"
-#include "utilPrintGraph_Interface.h"
 
 #include "sgm/MR_Storing.hh"
 #include "sgm/Pattern.hh"

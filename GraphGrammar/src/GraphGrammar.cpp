@@ -35,7 +35,7 @@ bool GraphGrammar::ApplyRules(const std::vector<std::pair<ggl::Rule, float>>& ru
 
 	std::vector<ggl::Graph> outVector;
 	ggl::GS_STL_pushAllT gsVector(outVector);
-	ggl::MR_ApplyRule applyRule(gsVector);
+	ggl::MR_ApplyRule applyRule(gsVector, true);
 
 	ggl::LeftSidePattern lPattern(rules.back().first);
 

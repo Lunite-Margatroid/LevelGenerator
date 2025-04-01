@@ -3,7 +3,7 @@
 
 # Env
 
-IDE: Microsoft Visual Studio
+IDE: Microsoft Visual Studio 2022
 
 OS: Windows 10
 
@@ -14,6 +14,26 @@ language: c++17
 ## GGL
 
 url: https://www.tbi.univie.ac.at/software/GGL/
+
+### debug
+
+不知道是因为开发环境不同还是什么，我在使用的时候出了一些bug.
+
+#### 丢失const-volatile
+
+在发生错误的模板匹配处加`const`.
+
+#### minus unsigned
+
+把相关类型从`size_t`改为`int`.
+
+#### end_iter ++
+
+`MR_ApplyRule.cc`。如果应用的规则中含有删除边的规则时，抛异常。
+
+此处遍历特定顶点的`out edge`。
+
+添加逻辑：找到并删除`edge`后，`break`跳出循环。
 
 ## opencv
 

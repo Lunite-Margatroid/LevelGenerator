@@ -47,6 +47,8 @@ cv::Mat Visualization::DrawTreeGraph(const sgm::Graph_Interface& graph, const st
 		for (auto iter = graph.getOutEdgesBegin(i); iter != graph.getOutEdgesEnd(i); iter++)
 		{
 			int postNode = iter->getToIndex();
+			if (postNode < i)
+				continue;
 			float x1 = nodeCoord[i].first;
 			float y1 = nodeCoord[i].second;
 			float x2 = nodeCoord[postNode].first;
