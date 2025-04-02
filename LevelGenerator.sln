@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Visualization", "Visualizat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphGrammar", "GraphGrammar\GraphGrammar.vcxproj", "{1ED296F8-556B-4C5D-8A2F-484939705FEE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cellular", "Cellular\Cellular.vcxproj", "{B1083F11-EF72-45D4-98A6-C107ADD9726B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{1ED296F8-556B-4C5D-8A2F-484939705FEE}.Release|x64.Build.0 = Release|x64
 		{1ED296F8-556B-4C5D-8A2F-484939705FEE}.Release|x86.ActiveCfg = Release|Win32
 		{1ED296F8-556B-4C5D-8A2F-484939705FEE}.Release|x86.Build.0 = Release|Win32
+		{B1083F11-EF72-45D4-98A6-C107ADD9726B}.Debug|x64.ActiveCfg = Debug|x64
+		{B1083F11-EF72-45D4-98A6-C107ADD9726B}.Debug|x64.Build.0 = Debug|x64
+		{B1083F11-EF72-45D4-98A6-C107ADD9726B}.Debug|x86.ActiveCfg = Debug|Win32
+		{B1083F11-EF72-45D4-98A6-C107ADD9726B}.Debug|x86.Build.0 = Debug|Win32
+		{B1083F11-EF72-45D4-98A6-C107ADD9726B}.Release|x64.ActiveCfg = Release|x64
+		{B1083F11-EF72-45D4-98A6-C107ADD9726B}.Release|x64.Build.0 = Release|x64
+		{B1083F11-EF72-45D4-98A6-C107ADD9726B}.Release|x86.ActiveCfg = Release|Win32
+		{B1083F11-EF72-45D4-98A6-C107ADD9726B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
