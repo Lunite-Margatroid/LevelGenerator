@@ -32,4 +32,6 @@ public:
 	bool Match(const sgm::Pattern_Interface& pattern, const sgm::Graph_Interface& target);
 	// 设置随机种子
 	void SetSeed(unsigned int seed);
+
+	const std::vector<ggl::Graph>& GetOutputVector() const;
 };

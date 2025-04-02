@@ -6,10 +6,10 @@ int main(int argc, char* argv[])
 	int appRet = 0;
 	try
 	{
-		Application app;
+		Application app(argc, argv);
 		appRet = app.Run();
 	}
-	catch (const LG::LGException& e)
+	catch (const std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}

@@ -93,10 +93,13 @@
       <PreprocessorDefinitions>LG_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opencv_world4110d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependence\bin\opencv2;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -108,12 +111,15 @@
       <PreprocessorDefinitions>LG_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opencv_world4110.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependence\bin\opencv2;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -123,10 +129,13 @@
       <PreprocessorDefinitions>LG_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opencv_world4110d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependence\bin\opencv2;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -138,22 +147,34 @@
       <PreprocessorDefinitions>LG_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opencv_world4110.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependence\bin\opencv2;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\LevelGraph.h" />
-    <ClInclude Include="src\LGException.h" />
+    <ClInclude Include="src\LevelGenerator.h" />
     <ClInclude Include="src\LG_Common.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\LevelGraph.cpp" />
-    <ClCompile Include="src\LGException.cpp" />
+    <ProjectReference Include="..\GGL\GGL.vcxproj">
+      <Project>{c6d3020e-e2a5-40e9-b65b-0dab92c5f74c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GraphGrammar\GraphGrammar.vcxproj">
+      <Project>{1ed296f8-556b-4c5d-8a2f-484939705fee}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Visualization\Visualization.vcxproj">
+      <Project>{5f8a923e-f613-471a-87cd-6d2b1e746776}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\LevelGenerator.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -111,7 +111,10 @@ int GraphGrammar::Step(int nSteps)
 	{
 		int nMatch = Step();
 		if (nMatch > 0)
+		{
 			ret += 1;
+			std::cout << "Step: " << ret << std::endl;
+		}
 		else
 			break;
 	}
@@ -137,4 +140,9 @@ void GraphGrammar::SetSeed(unsigned int seed)
 {
 	m_Seed = seed;
 	std::srand(m_Seed);
+}
+
+const std::vector<ggl::Graph>& GraphGrammar::GetOutputVector() const
+{
+	return m_graphs;
 }

@@ -3,8 +3,10 @@ class Application
 {
 private:
 	bool m_bRun;
+	int m_nArg;
+	char** m_vArgs;
 public:
-	Application();
+	Application(int argn, char** argv);
 	~Application();
 
 	bool IsRun();

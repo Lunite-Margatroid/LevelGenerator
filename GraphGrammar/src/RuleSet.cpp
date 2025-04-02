@@ -10,6 +10,9 @@ bool RuleSet::SameLeftPattern(const ggl::LeftSidePattern& p1, const ggl::LeftSid
 	assert(pi2);
 	return *pi1 == *pi2;
 }
+RuleSet::RuleSet()
+	:m_Datas()
+{}
 
 void RuleSet::AddRule(const ggl::Rule& rule, float w /* w = 1.0 */)
 {
@@ -51,4 +54,10 @@ void RuleSet::AddRule(const std::string& ruleGML, float w /* w = 1.0 */)
 {
 	std::pair<ggl::Rule, int> v = ggl::Rule_GMLparser::parseRule(ruleGML);
 	AddRule(std::move(v.first), w);
+}
+
+void RuleSet::Reset()
+{
+	if(m_Datas.size() > 0)
+		m_Datas.clear();
 }

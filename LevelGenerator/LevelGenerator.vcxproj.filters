@@ -15,21 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\LevelGraph.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\LGException.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\LG_Common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LevelGenerator.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\LevelGraph.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\LGException.cpp">
+    <ClCompile Include="src\LevelGenerator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
