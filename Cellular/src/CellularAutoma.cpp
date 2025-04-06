@@ -1,16 +1,11 @@
 #include "CellularAutoma.h"
 
-CellularAutoma::CellularAutoma(const ggl::Graph* pGraph)
-	:m_pInputGraph(pGraph)
+
+
+CellularAutoma::CellularAutoma(const sgm::Graph_boost<ggl::Graph>& gi)
+:m_GI(gi)
 {
 }
 
-CellularAutoma::CellularAutoma()
-	:m_pInputGraph(nullptr)
-{
-}
 
-void CellularAutoma::SetInputGraph(const ggl::Graph* pGraph)
-{
-	m_pInputGraph = pGraph;
-}
+
