@@ -1,0 +1,360 @@
+rule[
+	ruleID "rule-b-001-01"
+	context[]
+	left [
+		node [ id 1 label "S"]
+	]
+	right[
+		node [ id 1 label "e"]
+		node [ id 2 label "C"]
+		node [ id 3 label "G"]
+		node [ id 4 label "bm"]
+		node [ id 5 label "iq"]
+		node [ id 6 label "ti"]
+		node [ id 7 label "CF"]
+		node [ id 8 label "g"]
+		edge [ source 1 target 2 label "->"]
+		edge [ source 2 target 3 label "->"]
+		edge [ source 3 target 4 label "=>"]
+		edge [ source 4 target 5 label "=>"]
+		edge [ source 5 target 6 label "=>"]
+		edge [ source 6 target 7 label "=>"]
+		edge [ source 7 target 8 label "->"]
+	]
+]
+#############################################
+rule[
+	ruleID "rule-b-001-02"
+	context[
+		node [ id 2 label "g"]
+	]
+	left[
+		node [ id 1 label "CF"]
+		edge [ source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 1 label "C"]
+		node [ id 3 label "G"]
+		node [ id 4 label "lf"]
+		node [ id 5 label "bl"]
+		node [ id 6 label "t"]
+		node [ id 7 label "kf"]
+		node [ id 8 label "H"]
+		node [ id 9 label "H"]
+		edge [ source 1 target 8 label "->"]
+		edge [ source 1 target 6 label "->"]
+		edge [ source 1 target 3 label "->"]
+		edge [ source 6 target 7 label "=>"]
+		edge [ source 6 target 9 label "->"]
+		edge [ source 7 target 4 label "->"]
+		edge [ source 3 target 4 label "=>"]
+		edge [ source 4 target 5 label "=>"]
+		edge [ source 5 target 2 label "=>"]
+	]
+]
+###########################################
+rule[
+	ruleID "rule-b-001-03"
+	context[
+		
+	]
+	left[
+		node [ id 1 label "C"]
+		node [ id 2 label "G"]
+		edge [source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 1 label "CL"]
+		node [ id 2 label "CL"]
+		node [ id 3 label "CL"]
+		edge [ source 1 target 3 label "=>"]
+		edge [ source 3 target 2 label "=>"]
+	]
+]
+###########################################
+rule[
+	ruleID "rule-b-001-04"
+	context [
+	
+	]
+	left[
+		node [ id 1 label "C"]
+		node [ id 2 label "G"]
+		edge [source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 1 label "CL"]
+		node [ id 2 label "CL"]
+		node [ id 3 label "CL"]
+		node [ id 4 label "CL"]
+		edge [ source 1 target 3 label "=>" ]
+		edge [ source 3 target 4 label "=>" ]
+		edge [ source 4 target 2 label "=>" ]
+	]
+]
+###########################################
+rule[
+	ruleID "rule-b-001-05"
+	context [ ]
+	left [
+		node [ id 1 label "C"]
+		node [ id 2 label "G"]
+		edge [ source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 1 label "CL"]
+		node [ id 2 label "CL"]
+		node [ id 3 label "CL"]
+		node [ id 4 label "CL"]
+		node [ id 5 label "CL"]
+		edge [ source 1 target 3 label "=>" ]
+		edge [ source 3 target 4 label "=>" ]
+		edge [ source 4 target 5 label "=>" ]
+		edge [ source 5 target 2 label "=>" ]
+	]
+]
+###########################################
+rule[
+	ruleID "rule-b-001-06"
+	context []
+	left[
+		node [ id 1 label "CL"]
+		node [ id 2 label "CL"]
+		edge [ source 1 target 2 label "=>"]
+	]
+	right[
+		node [ id 1 label "k"]
+		node [ id 2 label "l"]
+		edge [ source 1 target 2 label "=>"]
+	]
+]
+###########################################
+rule[
+	ruleID "rule-b-001-07"
+	context [
+		node [ id 2 label "CL"]]
+	left[
+		node [ id 1 label "CL"]
+		edge [ source 1 target 2 label "=>"]
+	]
+	right[
+		node [ id 1 label "k"]
+		node [ id 3 label "l"]
+		edge [ source 1 target 3 label "=>"]
+		edge [ source 3 target 2 label "=>"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-08"
+	context[]
+	left[
+		node [ id 1 label "CL"]
+	]
+	right[
+		node [ id 1 label "t"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-09"
+	context[]
+	left[
+		node [ id 1 label "CL"]
+	]
+	right[
+		node [ id 1 label "t"]
+		node [ id 2 label "t"]
+		node [ id 3 label "ib"]
+		edge [ source 1 target 2 label "=>"]
+		edge [ source 2 target 3 label "=>"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-10"
+	context[]
+	left[
+		node [ id 1 label "CL"]
+	]
+	right[
+		node [ id 1 label "ts"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-11"
+	context[
+		node [ id 2 label "G"]
+	]
+	left[
+		node [ id 1 label "C"]
+		edge [ source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 1 label "CP"]
+		edge [ source 1 target 2 label "->"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-12"
+	context[]
+	left[
+		node [ id 1 label "CP"]
+		node [ id 2 label "G"]
+		edge [ source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 1 label "F"]
+		node [ id 2 label "lm"]
+		node [ id 3 label "km"]
+		node [ id 4 label "km"]
+		node [ id 5 label "km"]
+		edge [ source 1 target 3 label "->"]
+		edge [ source 1 target 4 label "->"]
+		edge [ source 1 target 5 label "->"]
+		edge [ source 3 target 2 label "->"]
+		edge [ source 4 target 2 label "->"]
+		edge [ source 5 target 2 label "->"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-13"
+	context[
+		node [ id 1 label "F"]
+		node [ id 2 label "km"]
+	]
+	left[
+		
+		edge [ source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 3 label "k"]
+		node [ id 4 label "l"]
+		node [ id 5 label "H"]
+		edge [ source 1 target 3 label "->"]
+		edge [ source 3 target 4 label "->"]
+		edge [ source 4 target 2 label "=>"]
+		edge [ source 4 target 5 label "=>"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-14"
+	context[
+		node [ id 1 label "F"]
+		node [ id 2 label "km"]
+	]
+	left[
+		
+		edge [ source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 3 label "t"]
+		edge [ source 1 target 3 label "->"]
+		edge [ source 3 target 2 label "=>"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-15"
+	context[
+		node [ id 1 label "F"]
+		node [ id 2 label "km"]
+	]
+	left[
+		edge [ source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 3 label "ts"]
+		edge [ source 1 target 3 label "->"]
+		edge [ source 3 target 2 label "=>"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-16"
+	context[
+		node [ id 1 label "F"]
+		node [ id 2 label "k"]
+	]
+	left[
+		edge [ source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 3 label "t"]
+		edge [ source 1 target 3 label "->"]
+		edge [ source 3 target 2 label "=>"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-17"
+	context[
+	
+		node [ id 1 label "F"]
+		node [ id 2 label "k"]
+	]
+	left[
+		edge [ source 1 target 2 label "->"]
+	]
+	right[
+		node [ id 3 label "ts"]
+		edge [ source 1 target 3 label "->"]
+		edge [ source 3 target 2 label "=>"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-18"
+	context []
+	left[
+		node [ id 1 label "F"]
+	]
+	right[
+		node [ id 1 label "n"]
+		node [ id 2 label "H"]
+		node [ id 3 label "H"]
+		edge [ source 1 target 2 label "->"]
+		edge [ source 1 target 3 label "->"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-19"
+	context []
+	left[
+		node [ id 1 label "H"]
+	]
+	right[
+		node [ id 1 label "n"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-20"
+	context []
+	left[
+		node [ id 1 label "H"]
+	]
+	right[
+		node [ id 1 label "t"]
+		node [ id 2 label "ib"]
+		edge [ source 1 target 2 label "=>"]
+	]
+]
+############################################
+rule[
+	ruleID "rule-b-001-21"
+	context []
+	left[
+		node [ id 1 label "H"]
+	]
+	right[
+		node [ id 1 label "ts"]
+		node [ id 2 label "ib"]
+		edge [ source 1 target 2 label "=>"]
+	]
+]

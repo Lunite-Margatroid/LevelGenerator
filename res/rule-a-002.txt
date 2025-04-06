@@ -1,0 +1,13 @@
+rule[
+	ruleID "rule-a-002"
+	context []
+	left
+	[
+		node [id 0 label "A"]
+	]
+	right
+	[
+		node [id 0 label "a"]
+	]
+
+]
