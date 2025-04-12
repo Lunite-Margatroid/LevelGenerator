@@ -15,19 +15,19 @@ public:
 		plus_y = 3
 	};
 
-	typedef int NodeIndex;
-	typedef int NodeID;
+	typedef int NodeIndex;		// 节点信息在缓存中(m_Data)的偏移量
+	typedef int NodeID;			// 节点的id
 
 	struct NodeDesc
 	{
-		NodeID id;
-		int x, y;
-		std::bitset<4> con;
+		NodeID id;				// 节点的id 唯一
+		int x, y;				// 节点的坐标
+		std::bitset<4> con;		// 节点在网格中对四领域节点的连通性
 		NodeDesc();
 		NodeDesc(NodeID iid, int xx, int yy, unsigned int conn);
-		void SetAccess(Direction dir);
-		void ResetAccess(Direction dir);
-		bool GetAccess(Direction dir);
+		void SetAccess(Direction dir);		// 将对应方向的连通性设置为1
+		void ResetAccess(Direction dir);	// 将对应方向的连通性设置为0
+		bool GetAccess(Direction dir);		// 获得对应方向的连通性
 	};
 
 	std::vector<NodeDesc> m_Data;
