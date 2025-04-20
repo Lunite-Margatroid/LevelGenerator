@@ -38,9 +38,11 @@ int Application::Run()
 		{
 			int seed = atoi(m_vArgs[4]);
 			std::cout << "Rand Seed: " << seed << std::endl;
+			lg.SetRandSeed(seed);
 		}
 		std::cout << "Step: " << lg.Step(30) << std::endl; 
 		lg.Output(m_vArgs[3]);
+		lg.OutputGird(std::cout);
 
 		m_bRun = false;
 	}

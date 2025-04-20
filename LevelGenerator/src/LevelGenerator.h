@@ -39,4 +39,6 @@ public:
 	void Output(const std::string& fileName);
 
 	void SetBeginNodeLabel(const std::string& label, bool b = true);
+
+	void OutputGird(std::ostream& out);
 };

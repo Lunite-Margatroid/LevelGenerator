@@ -93,7 +93,7 @@
       <PreprocessorDefinitions>LG_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;$(SolutionDir)Cellular\src;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -111,7 +111,7 @@
       <PreprocessorDefinitions>LG_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;$(SolutionDir)Cellular\src;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,7 +129,7 @@
       <PreprocessorDefinitions>LG_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;$(SolutionDir)Cellular\src;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,7 +147,7 @@
       <PreprocessorDefinitions>LG_DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependence\include;$(SolutionDir)Cellular\src;L:\boost_1_87_0;$(SolutionDir)GraphGrammar\src;$(SolutionDir)Visualization\src;$(SolutionDir)GGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -163,6 +163,9 @@
     <ClInclude Include="src\LG_Common.h" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cellular\Cellular.vcxproj">
+      <Project>{b1083f11-ef72-45d4-98a6-c107add9726b}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\GGL\GGL.vcxproj">
       <Project>{c6d3020e-e2a5-40e9-b65b-0dab92c5f74c}</Project>
     </ProjectReference>

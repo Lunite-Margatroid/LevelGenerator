@@ -3,6 +3,7 @@
 #include <bitset>
 #include <vector>
 #include <iomanip>
+#include <map>
 
 class GridMap
 {
@@ -31,13 +32,10 @@ public:
 	};
 
 	std::vector<NodeDesc> m_Data;
-	
+	std::map<NodeID, NodeIndex> m_mapId2Index;
 
 	std::list<std::list<NodeIndex>> m_xLinkedListList;
 	std::list<std::list<NodeIndex>> m_yLinkedListList;
-	
-	NodeDesc& GetNodeDesc(NodeIndex index);
-	const NodeDesc& GetNodeDesc(NodeIndex) const;
 
 public:
 	GridMap() = default;
@@ -48,16 +46,19 @@ public:
 	NodeID GetNodeID(int x, int y) const;
 
 	// 如果指定坐标已存在节点  不进行任何操作
-	void InsertNode(int x, int y, NodeID id);
+	NodeDesc* InsertNode(int x, int y, NodeID id);
 	// 如果指定坐标已存在节点  不进行任何操作
-	void InsertNode(const NodeDesc& nodeDesc);
+	NodeDesc* InsertNode(const NodeDesc& nodeDesc);
 
 	NodeDesc* GetNodeDesc(int x, int y);
 	const NodeDesc* GetNodeDesc(int x, int y) const;
+	NodeDesc* GetNodeDesc(NodeID id);
+	const NodeDesc* GetNodeDesc(NodeID id) const;
 	bool NodeExist(int x, int y)const;
 
 	void PrintNode(std::ostream& outStream)const;
 	void PrintASCII(std::ostream& outStream, int charWidth = 1) const;
+	void PrintLabel(std::ostream& outStream, const std::vector<std::string>& labelMap, int charWidth = 1) const;
 
 	void Clear();
 };

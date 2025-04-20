@@ -2,6 +2,7 @@
 
 #include "RuleSet.h"
 
+
 class GraphGrammar
 {
 private:
@@ -34,4 +35,7 @@ public:
 	void SetSeed(unsigned int seed);
 
 	const std::vector<ggl::Graph>& GetOutputVector() const;
+	
+	// 
+
 };

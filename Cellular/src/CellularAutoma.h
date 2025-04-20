@@ -5,24 +5,25 @@
 
 class CellularAutoma
 {
-private:
+public:
 	struct NodeInfo {
 		int index;					// 该节点在ggl::Graph中的index 从0开始
 		int preIndex;				// 前置节点的index
 		int depth;					// 该节点相对于起点节点的深度
-		const std::string& label;	// 该节点在ggl::Graph的label
+		std::string label;	// 该节点在ggl::Graph的label
 
 		NodeInfo(int i, int pi, int d, const std::string& l = "n") :
 			index(i), preIndex(pi), depth(d), label(l){};
 	};
 
 	typedef std::pair<int, int> NodePair;
-
+private:
+	typedef GridMap::Direction Direction;
 private:
 	const sgm::Graph_boost<ggl::Graph>& m_GI;
 	GridMap m_gridMap;
 	std::queue<NodePair> m_que;		// 广度优先遍历的缓冲 first:前置节点的index
-	std::queue<NodeInfo> m_output;	// 广度优先遍历遍历顺序
+	std::vector<NodeInfo> m_output;	// 广度优先遍历遍历顺序
 
 	void Step();
 	// 清空m_output
@@ -37,3 +38,5 @@ public:
 
 	void Generate(const std::string& beginLabel = "e");
 };
+
+std::ostream& operator << (std::ostream& out, const CellularAutoma::NodeInfo& node);

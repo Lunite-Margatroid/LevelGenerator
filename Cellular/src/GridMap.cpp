@@ -25,33 +25,23 @@ bool GridMap::NodeDesc::GetAccess(Direction dir)
 	return con.test(static_cast<unsigned int>(dir));
 }
 
-GridMap::NodeDesc& GridMap::GetNodeDesc(NodeIndex index)
-{
-	return m_Data[static_cast<int>(index)];
-}
-
-const GridMap::NodeDesc& GridMap::GetNodeDesc(NodeIndex index) const
-{
-	return m_Data[static_cast<int>(index)];
-}
-
 GridMap::NodeID GridMap::GetNodeID(int x, int y) const
 {
 	return GetNodeDesc(x, y)->id;
 }
 
-void GridMap::InsertNode(int x, int y, GridMap::NodeID id)
+GridMap::NodeDesc* GridMap::InsertNode(int x, int y, GridMap::NodeID id)
 {
-	InsertNode(NodeDesc(id, x, y, 0x0));
+	return InsertNode(NodeDesc(id, x, y, 0x0));
 }
 
-void GridMap::InsertNode(const NodeDesc& nodeDesc)
+GridMap::NodeDesc* GridMap::InsertNode(const NodeDesc& nodeDesc)
 {
 	if (NodeExist(nodeDesc.x, nodeDesc.y))
-		return;
+		return nullptr;
 	NodeIndex index = m_Data.size();
 	m_Data.push_back(nodeDesc);
-	// TODO : Insert the Node
+	m_mapId2Index[nodeDesc.id] = index;
 	// 如果表中没有节点
 	if (m_xLinkedListList.empty())
 	{
@@ -61,14 +51,14 @@ void GridMap::InsertNode(const NodeDesc& nodeDesc)
 		yList.push_back(index);
 		m_xLinkedListList.emplace_back(std::move(xList));
 		m_yLinkedListList.emplace_back(std::move(yList));
-		return;
+		return &m_Data.back();
 	}
 
 	// ============= 插入xList ================
 	auto xMinList = m_xLinkedListList.front();
 	auto xMaxList = m_xLinkedListList.back();
-	int minX = GetNodeDesc(xMinList.front()).x;
-	int maxX = GetNodeDesc(xMaxList.front()).x;
+	int minX = m_Data[xMinList.front()].x;
+	int maxX = m_Data[xMaxList.front()].x;
 	if (minX > nodeDesc.x)
 	{// 如果不在范围内 在下界之外
 		while (minX != nodeDesc.x)
@@ -100,7 +90,7 @@ void GridMap::InsertNode(const NodeDesc& nodeDesc)
 		}
 		auto iterList = iterListList->begin();
 
-		while (iterList != iterListList->end() && GetNodeDesc(*iterList).y < nodeDesc.y)
+		while (iterList != iterListList->end() && m_Data[*iterList].y < nodeDesc.y)
 		{
 			iterList++;
 		}
@@ -111,8 +101,8 @@ void GridMap::InsertNode(const NodeDesc& nodeDesc)
 	// ============= 插入yList ================
 	auto yMinList = m_yLinkedListList.front();
 	auto yMaxList = m_yLinkedListList.back();
-	int minY = GetNodeDesc(yMinList.front()).y;
-	int maxY = GetNodeDesc(yMaxList.front()).y;
+	int minY = m_Data[yMinList.front()].y;
+	int maxY = m_Data[yMaxList.front()].y;
 	if (minY > nodeDesc.y)
 	{// 如果不在范围内 在下界之外
 		while (minY != nodeDesc.y)
@@ -144,13 +134,15 @@ void GridMap::InsertNode(const NodeDesc& nodeDesc)
 		}
 		auto iterList = iterListList->begin();
 
-		while (iterList != iterListList->end() && GetNodeDesc(*iterList).x < nodeDesc.x)
+		while (iterList != iterListList->end() && m_Data[*iterList].x < nodeDesc.x)
 		{
 			iterList++;
 		}
 		iterListList->insert(iterList, index);
 	}
 	// ============= 插入yList / end ==============
+
+	return &m_Data.back();
 }
 
 GridMap::NodeDesc* GridMap::GetNodeDesc(int x, int y)
@@ -167,17 +159,17 @@ GridMap::NodeDesc* GridMap::GetNodeDesc(int x, int y)
 			auto iterList = iterListList->begin();
 			// 如果x不在包含区域内
 			NodeIndex tIndex = *(iterList);
-			if(GetNodeDesc(tIndex).x > x)
+			if(m_Data[tIndex].x > x)
 				return nullptr;
 			// 找到x
-			if (GetNodeDesc(tIndex).x == x)
+			if (m_Data[tIndex].x == x)
 			{
 				for (; iterList != iterListList->end(); iterList++)
 				{
-					if (GetNodeDesc(*iterList).y > y)
+					if (m_Data[*iterList].y > y)
 						return nullptr;
-					if (GetNodeDesc(*iterList).y == y)
-						return &GetNodeDesc(*iterList);
+					if (m_Data[*iterList].y == y)
+						return &m_Data[*iterList];
 				}
 			}
 		}
@@ -198,17 +190,17 @@ const GridMap::NodeDesc* GridMap::GetNodeDesc(int x, int y) const
 			auto iterList = iterListList->begin();
 			// 如果x不在包含区域内
 			NodeIndex tIndex = *(iterList);
-			if (GetNodeDesc(tIndex).x > x)
+			if (m_Data[tIndex].x > x)
 				return nullptr;
 			// 找到x
-			if (GetNodeDesc(tIndex).x == x)
+			if (m_Data[tIndex].x == x)
 			{
 				for (; iterList != iterListList->end(); iterList++)
 				{
-					if (GetNodeDesc(*iterList).y > y)
+					if (m_Data[*iterList].y > y)
 						return nullptr;
-					if (GetNodeDesc(*iterList).y == y)
-						return static_cast<const GridMap::NodeDesc*>(&GetNodeDesc(*iterList));
+					if (m_Data[*iterList].y == y)
+						return static_cast<const GridMap::NodeDesc*>(&m_Data[*iterList]);
 				}
 			}
 		}
@@ -216,6 +208,16 @@ const GridMap::NodeDesc* GridMap::GetNodeDesc(int x, int y) const
 
 	// 没有找到
 	return nullptr;
+}
+
+GridMap::NodeDesc* GridMap::GetNodeDesc(GridMap::NodeID id)
+{
+	return &m_Data[m_mapId2Index[id]];
+}
+
+const GridMap::NodeDesc* GridMap::GetNodeDesc(GridMap::NodeID id) const
+{
+	return &m_Data[static_cast<int>((*m_mapId2Index.find(id)).second)];
 }
 
 bool GridMap::NodeExist(int x, int y) const
@@ -226,10 +228,10 @@ bool GridMap::NodeExist(int x, int y) const
 void GridMap::PrintNode(std::ostream& outStream) const
 {
 	int minX, maxX, minY, maxY;
-	minX = GetNodeDesc(m_xLinkedListList.front().front()).x;
-	maxX = GetNodeDesc(m_xLinkedListList.back().back()).x;
-	minY = GetNodeDesc(m_yLinkedListList.front().front()).y;
-	maxY = GetNodeDesc(m_yLinkedListList.back().back()).y;
+	minX = m_Data[m_xLinkedListList.front().front()].x;
+	maxX = m_Data[m_xLinkedListList.back().back()].x;
+	minY = m_Data[m_yLinkedListList.front().front()].y;
+	maxY = m_Data[m_yLinkedListList.back().back()].y;
 
 	int wid = 1;
 	int t = std::max(std::max(abs(minX), abs(maxX)), std::max(abs(minY), abs(maxY)));
@@ -243,7 +245,7 @@ void GridMap::PrintNode(std::ostream& outStream) const
 	{
 		for (NodeIndex index : xList)
 		{
-			const NodeDesc& desc = GetNodeDesc(index);
+			const NodeDesc& desc = m_Data[index];
 			outStream << "ID: " << std::setw(wid) << desc.id << "   Coord: (" << std::setw(wid) << desc.x << ", " << std::setw(wid) << desc.y << ")\n";
 		}
 	}
@@ -253,10 +255,10 @@ void GridMap::PrintNode(std::ostream& outStream) const
 void GridMap::PrintASCII(std::ostream& outStream, int charWidth) const
 {
 	int minX, maxX, minY, maxY;
-	minX = GetNodeDesc(m_xLinkedListList.front().front()).x;
-	maxX = GetNodeDesc(m_xLinkedListList.back().back()).x;
-	minY = GetNodeDesc(m_yLinkedListList.front().front()).y;
-	maxY = GetNodeDesc(m_yLinkedListList.back().back()).y;
+	minX = m_Data[m_xLinkedListList.front().front()].x;
+	maxX = m_Data[m_xLinkedListList.back().back()].x;
+	minY = m_Data[m_yLinkedListList.front().front()].y;
+	maxY = m_Data[m_yLinkedListList.back().back()].y;
 
 	int wid = 1;
 	int t = std::max(std::max(abs(minX), abs(maxX)), std::max(abs(minY), abs(maxY)));
@@ -280,7 +282,7 @@ void GridMap::PrintASCII(std::ostream& outStream, int charWidth) const
 		for (auto iter = iterList->begin();iter != iterList->end();iter++)
 		{
 			NodeIndex index = *iter;
-			const NodeDesc& desc = GetNodeDesc(index);
+			const NodeDesc& desc = m_Data[index];
 			while (curX < desc.x)
 			{
 				outStream << std::setw(wid) << ".";
@@ -302,6 +304,67 @@ void GridMap::PrintASCII(std::ostream& outStream, int charWidth) const
 	for (curX = minX; curX <= maxX; curX++)
 	{
 		outStream << std::setw(wid) << curX ;
+	}
+	outStream << std::setw(wid) << "X" << std::endl;
+}
+
+void GridMap::PrintLabel(std::ostream& outStream, const std::vector<std::string>& labelMap, int charWidth) const
+{
+	int minX, maxX, minY, maxY;
+	minX = m_Data[m_xLinkedListList.front().front()].x;
+	maxX = m_Data[m_xLinkedListList.back().back()].x;
+	minY = m_Data[m_yLinkedListList.front().front()].y;
+	maxY = m_Data[m_yLinkedListList.back().back()].y;
+
+	int wid = 1;
+	int t = std::max(std::max(abs(minX), abs(maxX)), std::max(abs(minY), abs(maxY)));
+	while (t > 0)
+	{
+		wid++;
+		t /= 10;
+	}
+	wid = std::max(wid, charWidth + 1);
+
+	for (const std::string& labs : labelMap)
+	{
+		wid = std::max(wid, int(labs.length() + 1));
+	}
+
+	int curX, curY;
+	curY = maxY;
+	curX = minX;
+	std::string edgeTop(wid * (maxX - minX + 1), '-');
+	outStream << std::setw(wid) << "Y" << '+' << edgeTop << '+' << std::endl;
+	for (auto iterList = m_yLinkedListList.rbegin(); iterList != m_yLinkedListList.rend(); iterList++)
+	{
+
+		curX = minX;
+		outStream << std::setw(wid) << curY << '|';
+		for (auto iter = iterList->begin(); iter != iterList->end(); iter++)
+		{
+			NodeIndex index = *iter;
+			const NodeDesc& desc = m_Data[index];
+			while (curX < desc.x)
+			{
+				outStream << std::setw(wid) << ".";
+				curX++;
+			}
+			outStream << std::setw(wid) << labelMap[desc.id];
+			curX += 1;
+		}
+		while (curX <= maxX)
+		{
+			outStream << std::setw(wid) << '.';
+			curX++;
+		}
+		outStream << '|' << std::endl;
+		curY -= 1;
+	}
+	outStream << std::setw(wid) << 'Y' << '+' << std::string(wid * (maxX - minX + 1), '-') << '+' << std::endl;
+	outStream << std::setw(wid) << 'X';
+	for (curX = minX; curX <= maxX; curX++)
+	{
+		outStream << std::setw(wid) << curX;
 	}
 	outStream << std::setw(wid) << "X" << std::endl;
 }
