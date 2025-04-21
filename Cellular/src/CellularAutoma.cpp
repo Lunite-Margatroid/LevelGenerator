@@ -175,5 +175,10 @@ void CellularAutoma::Generate(const std::string& beginLabel)
 	m_gridMap.PrintLabel(std::cout, labMap);
 }
 
+const GridMap& CellularAutoma::GetGridMap() const
+{
+	return m_gridMap;
+}
+
 
 

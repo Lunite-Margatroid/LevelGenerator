@@ -60,5 +60,12 @@ public:
 	void PrintASCII(std::ostream& outStream, int charWidth = 1) const;
 	void PrintLabel(std::ostream& outStream, const std::vector<std::string>& labelMap, int charWidth = 1) const;
 
+	int GetXMin() const;
+	int GetYMin() const;
+	int GetXMax() const;
+	int GetYMax() const;
+
 	void Clear();
+
+	const std::vector<NodeDesc>& GetData() const;
 };

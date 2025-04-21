@@ -37,6 +37,7 @@ public:
 	CellularAutoma& operator = (const CellularAutoma& other) = delete;
 
 	void Generate(const std::string& beginLabel = "e");
+	const GridMap& GetGridMap() const;
 };
 
 std::ostream& operator << (std::ostream& out, const CellularAutoma::NodeInfo& node);

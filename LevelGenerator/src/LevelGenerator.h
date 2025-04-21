@@ -40,5 +40,6 @@ public:
 
 	void SetBeginNodeLabel(const std::string& label, bool b = true);
 
-	void OutputGird(std::ostream& out);
+	void OutputGrid(std::ostream& out);
+	void OutputGridAndLevel(std::ostream& out, const std::string& fileName);
 };

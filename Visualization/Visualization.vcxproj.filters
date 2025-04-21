@@ -18,12 +18,18 @@
     <ClCompile Include="src\Visualization.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\LevelDrawer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Visualization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\CommonV.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LevelDrawer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

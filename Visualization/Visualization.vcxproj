@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>L:\boost_1_87_0\;$(SolutionDir)GGL\src;$(SolutionDir)Dependence\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>L:\boost_1_87_0\;$(SolutionDir)GGL\src;$(SolutionDir)Dependence\include;$(SolutionDir)Cellular\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>L:\boost_1_87_0\;$(SolutionDir)GGL\src;$(SolutionDir)Dependence\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>L:\boost_1_87_0\;$(SolutionDir)GGL\src;$(SolutionDir)Dependence\include;$(SolutionDir)Cellular\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -128,7 +128,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>L:\boost_1_87_0\;$(SolutionDir)GGL\src;$(SolutionDir)Dependence\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>L:\boost_1_87_0\;$(SolutionDir)GGL\src;$(SolutionDir)Dependence\include;$(SolutionDir)Cellular\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -146,7 +146,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>L:\boost_1_87_0\;$(SolutionDir)GGL\src;$(SolutionDir)Dependence\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>L:\boost_1_87_0\;$(SolutionDir)GGL\src;$(SolutionDir)Dependence\include;$(SolutionDir)Cellular\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -159,13 +159,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\LevelDrawer.cpp" />
     <ClCompile Include="src\Visualization.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CommonV.h" />
+    <ClInclude Include="src\LevelDrawer.h" />
     <ClInclude Include="src\Visualization.h" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cellular\Cellular.vcxproj">
+      <Project>{b1083f11-ef72-45d4-98a6-c107add9726b}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\GGL\GGL.vcxproj">
       <Project>{c6d3020e-e2a5-40e9-b65b-0dab92c5f74c}</Project>
     </ProjectReference>

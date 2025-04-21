@@ -1,6 +1,7 @@
 #include "LevelGenerator.h"
 #include "ggl/Graph_GML_writer.hh"
 #include "CellularAutoma.h"
+#include "LevelDrawer.h"
 void LevelGenerator::Init(const ggl::Graph& graph, const std::string& filePath)
 {
 	SetInputGraph(graph);
@@ -117,8 +118,6 @@ void LevelGenerator::Output(const std::string& fileName)
 	{
 		std::cout << "Creating file failed. Cant output GML File.\n";
 	}
-	
-
 }
 
 void LevelGenerator::SetBeginNodeLabel(const std::string& label, bool b)
@@ -126,12 +125,31 @@ void LevelGenerator::SetBeginNodeLabel(const std::string& label, bool b)
 	m_visual.SetBeginLabel(b, label);
 }
 
-void LevelGenerator::OutputGird(std::ostream& out)
+void LevelGenerator::OutputGrid(std::ostream& out)
 {
 	if (m_pGrammar && m_pGrammar->GetOutputVector().size() > 0)
 	{
 		const sgm::Graph_boost<ggl::Graph> gi(m_pGrammar->GetLastGraph());
 		CellularAutoma gridMap(gi);
 		gridMap.Generate();
+	}
+}
+
+void LevelGenerator::OutputGridAndLevel(std::ostream& out, const std::string& fileName)
+{
+	if (m_pGrammar && m_pGrammar->GetOutputVector().size() > 0)
+	{
+		const sgm::Graph_boost<ggl::Graph> gi(m_pGrammar->GetLastGraph());
+		CellularAutoma gridMap(gi);
+		gridMap.Generate();
+
+		// Output physicial Level
+		{
+			LevelDrawer ld;
+			std::stringstream ss;
+			ss << fileName << "_level.jpg";
+			cv::imwrite(ss.str(), ld.GridMap2Img(gridMap.GetGridMap()));
+			std::cout << "Level Img Output: " << ss.str() << std::endl;
+		}
 	}
 }

@@ -369,9 +369,34 @@ void GridMap::PrintLabel(std::ostream& outStream, const std::vector<std::string>
 	outStream << std::setw(wid) << "X" << std::endl;
 }
 
+int GridMap::GetXMin() const
+{
+	return m_Data[static_cast<int>(m_xLinkedListList.front().front())].x;
+}
+
+int GridMap::GetYMin() const
+{
+	return m_Data[static_cast<int>(m_yLinkedListList.front().front())].y;
+}
+
+int GridMap::GetXMax() const
+{
+	return m_Data[static_cast<int>(m_xLinkedListList.back().front())].x;
+}
+
+int GridMap::GetYMax() const
+{
+	return m_Data[static_cast<int>(m_yLinkedListList.back().front())].y;
+}
+
 void GridMap::Clear()
 {
 	m_Data.clear();
 	m_xLinkedListList.clear();
 	m_yLinkedListList.clear();
+}
+
+const std::vector<GridMap::NodeDesc>& GridMap::GetData() const
+{
+	return m_Data;
 }

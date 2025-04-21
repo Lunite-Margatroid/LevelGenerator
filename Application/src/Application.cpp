@@ -42,7 +42,7 @@ int Application::Run()
 		}
 		std::cout << "Step: " << lg.Step(30) << std::endl; 
 		lg.Output(m_vArgs[3]);
-		lg.OutputGird(std::cout);
+		lg.OutputGridAndLevel(std::cout, m_vArgs[3]);
 
 		m_bRun = false;
 	}

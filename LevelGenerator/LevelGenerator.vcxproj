@@ -163,9 +163,6 @@
     <ClInclude Include="src\LG_Common.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cellular\Cellular.vcxproj">
-      <Project>{b1083f11-ef72-45d4-98a6-c107add9726b}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\GGL\GGL.vcxproj">
       <Project>{c6d3020e-e2a5-40e9-b65b-0dab92c5f74c}</Project>
     </ProjectReference>
