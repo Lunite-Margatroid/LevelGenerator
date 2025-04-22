@@ -121,8 +121,11 @@ void CellularAutoma::Generate(const std::string& beginLabel)
 			// Randomly selet the direction
 			Direction dir = tempContainer[rand() % nDir];
 			GridMap::NodeDesc* curNode = m_gridMap.InsertNode(preX + xx[static_cast<int>(dir)], preY + yy[static_cast<int>(dir)], node.index);
+			pPreNodeDesc = m_gridMap.GetNodeDesc(preIdd);		// std::vector插入新元素 扩容 指针变动 重新获取指针
+			pLastNodeDesc = m_gridMap.GetNodeDesc(lastX, lastY);// std::vector插入新元素 扩容 指针变动 重新获取指针
 			assert(curNode);
-			pPreNodeDesc->SetAccess(dir);
+			// pPreNodeDesc->SetAccess(dir);
+			pPreNodeDesc->con.set(static_cast<size_t>(dir), true);
 			curNode->SetAccess(oppositDir[static_cast<int>(dir)]);
 			lastX = curNode->x;
 			lastY = curNode->y;

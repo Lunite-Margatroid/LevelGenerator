@@ -12,17 +12,17 @@ GridMap::NodeDesc::NodeDesc(NodeID iid, int xx, int yy, unsigned int conn)
 
 void GridMap::NodeDesc::SetAccess(Direction dir)
 {
-	con.set(static_cast<unsigned int>(dir));
+	con.set(static_cast<int>(dir));
 }
 
 void GridMap::NodeDesc::ResetAccess(Direction dir)
 {
-	con.reset(static_cast<unsigned int>(dir));
+	con.reset(static_cast<int>(dir));
 }
 
 bool GridMap::NodeDesc::GetAccess(Direction dir)
 {
-	return con.test(static_cast<unsigned int>(dir));
+	return con.test(static_cast<int>(dir));
 }
 
 GridMap::NodeID GridMap::GetNodeID(int x, int y) const

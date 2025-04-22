@@ -81,26 +81,26 @@ cv::Mat LevelDrawer::GridMap2Img(const GridMap& gridMap) const
 
 	auto DrawGrid = [&](int x, int y, std::bitset<4> access)->void {
 		int left = x - xMin;
-		left = left * m_nGridWidth + (left + 1) * m_nGapWidth;
-		left += (m_nGapWidth >> 1);
+		left = left * ( m_nGridWidth + m_nGapWidth) + m_nGapWidth;
 		int right = left + m_nGridWidth;
 		int bottom = y - yMin;
-		bottom = bottom * m_nGridHeight + (bottom + 1) * m_nGapWidth;
-		bottom += (m_nGridHeight >> 1);
+		bottom = bottom * (m_nGridHeight +  m_nGapWidth) + m_nGapWidth;
 		int top = bottom + m_nGridHeight;
 		int halfLineWidth = m_nLineWidth >> 1;
 		int midX = left + (m_nGridWidth >> 1);
 		int midY = bottom + (m_nGridHeight >> 1);
-		// draw ground
-		cv::rectangle(outImg, cv::Point(left, imgHeight - bottom), cv::Point(right, imgHeight - top), 
-			cv::Scalar(m_cGroundColor[0], m_cGroundColor[1], m_cGroundColor[2] ), -1, lineType);
 		// draw framework
-		cv::rectangle(outImg, 
-			cv::Point(left + halfLineWidth, imgHeight - (bottom + halfLineWidth)),
-			cv::Point(right - halfLineWidth, imgHeight - (top - halfLineWidth)),
+		cv::rectangle(outImg,
+			cv::Point(left, imgHeight - bottom ),
+			cv::Point(right, imgHeight - top),
 			cv::Scalar(m_cLineColor[0], m_cLineColor[1], m_cLineColor[2]),
-			m_nLineWidth,
+			-1,
 			lineType);
+		// draw ground
+		cv::rectangle(outImg, cv::Point(left + m_nLineWidth, imgHeight - (bottom + m_nLineWidth)), 
+			cv::Point(right - m_nLineWidth, imgHeight - (top-m_nLineWidth)), 
+			cv::Scalar(m_cGroundColor[0], m_cGroundColor[1], m_cGroundColor[2] ), -1, lineType);
+		
 		// draw passage
 		if (access[static_cast<int>(GridMap::Direction::minus_x)])
 		{
@@ -143,7 +143,7 @@ cv::Mat LevelDrawer::GridMap2Img(const GridMap& gridMap) const
 			int tLeft = midX - (m_nPassageWidth >> 1);
 			int tRight = tLeft + m_nPassageWidth;
 			int tTop = top + m_nGapWidth;
-			int tBottom = bottom - m_nLineWidth;
+			int tBottom = top - m_nLineWidth;
 			cv::rectangle(
 				outImg, cv::Point(tLeft, imgHeight - tBottom),
 				cv::Point(tRight, imgHeight - tTop),
