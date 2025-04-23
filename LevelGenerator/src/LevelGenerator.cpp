@@ -148,7 +148,7 @@ void LevelGenerator::OutputGridAndLevel(std::ostream& out, const std::string& fi
 			LevelDrawer ld;
 			std::stringstream ss;
 			ss << fileName << "_level.jpg";
-			cv::imwrite(ss.str(), ld.GridMap2Img(gridMap.GetGridMap()));
+			cv::imwrite(ss.str(), ld.GridMap2Img(gridMap));
 			std::cout << "Level Img Output: " << ss.str() << std::endl;
 		}
 	}

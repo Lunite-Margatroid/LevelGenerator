@@ -183,5 +183,8 @@ const GridMap& CellularAutoma::GetGridMap() const
 	return m_gridMap;
 }
 
-
+const sgm::Graph_boost<ggl::Graph>& CellularAutoma::GetGraphInterface() const
+{
+	return m_GI;
+}
 

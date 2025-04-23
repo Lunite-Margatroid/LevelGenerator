@@ -38,6 +38,7 @@ public:
 
 	void Generate(const std::string& beginLabel = "e");
 	const GridMap& GetGridMap() const;
+	const sgm::Graph_boost<ggl::Graph>& GetGraphInterface() const;
 };
 
 std::ostream& operator << (std::ostream& out, const CellularAutoma::NodeInfo& node);
